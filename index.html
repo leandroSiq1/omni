@@ -14,7 +14,7 @@
   <body>
     
     <header>
-      <h1>myLogo.aqui</h1>
+      <img src="assets/logo.svg" alt="Logo" />
     </header>
 
     <main class="container">
@@ -24,7 +24,7 @@
         <div class="card">
           <h3>
             <span>Entradas</span>
-            <img width="20px" src="https://github.com/leandrosiq1.png" />
+            <img width="20px" src="assets/income.svg" alt="Entradas" />
           </h3>
 
           <p>R$ 5,000,00</p>
@@ -33,7 +33,7 @@
         <div class="card">
           <h3>
             <span>Saídas</span>
-            <img width="20px" src="https://github.com/leandrosiq1.png" />
+            <img width="20px" src="assets/expense.svg" alt="Saídas" />
           </h3>
 
           <p>R$ 2,000,00</p>
@@ -42,14 +42,48 @@
         <div class="card">
           <h3>
             <span>Total</span>
-            <img width="20px" src="https://github.com/leandrosiq1.png" />
+            <img width="20px" src="assets/total.svg" alt="Total" />
           </h3>
 
           <p>R$ 3,000,00</p>
         </div>
       </section>
 
-      <section id="container"></section>
+      <section id="transaction">
+        <a href="#">+ Nova Transação</a>
+
+        <table id="data-table">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Valor</th>
+              <th>Data</th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="description">Uma descrição</td>
+              <td class="income">R$ 5,000,00</td>
+              <td class="date">09/06/2021</td>
+              
+              <td>
+                <img src="assets/minus.svg" alt="Remover transação" />
+              </td>
+            </tr>
+            <tr>
+              <td class="description">Uma descrição</td>
+              <td class="expense">R$ 2,000,00</td>
+              <td class="date">09/06/2021</td>
+              
+              <td>
+                <img src="assets/minus.svg" alt="Remover transação" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
 
   </body>

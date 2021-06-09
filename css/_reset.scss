@@ -28,3 +28,21 @@ h1, h2, h3, h4, h5, h6, p, button, input, a, * {
   width: 90%;
   margin: 0 auto;
 }
+
+@media (min-width: 800px) {
+  section#balance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    .card {
+      max-width: 500px;
+    }
+  }
+
+  section#transaction {
+    max-width: 1100px; 
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+}

@@ -5,7 +5,7 @@ section#balance {
     background: rgb(60, 255, 0);
     border-radius: 5px;
 
-    padding: 15px 20px;
+    padding: 25px 35px;
     margin-bottom: 20px;
 
     h3 {
@@ -14,11 +14,98 @@ section#balance {
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      img {
+        width: 50px;
+      }
     }
 
     p {
-      font-size: 20px;
+      font-size: 25px;
       line-height: 30px;
+    }
+  }
+}
+
+section#transaction {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 30px;
+  padding-bottom: 30px;
+
+  a {
+    font-size: 17px;
+    color: rgb(162, 7, 251);
+    
+    text-decoration: none;
+
+    display: inline-block;
+    margin: 0 0 20px 20px;
+
+    transition: .2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  table#data-table {
+    width: 100%;
+    border-spacing: 0;
+    color: #969cb3;
+
+    thead, tbody {
+      tr {
+        th:first-child, td:first-child {
+          border-radius: 5px 0 0 5px;
+        }
+  
+        th:last-child, td:last-child {
+          border-radius: 0 5px 5px 0;
+        }
+      }
+      
+    }
+
+    thead {
+      th {
+        font-size: 18px;
+        font-weight: normal;
+    
+        background: #fff;
+        padding: 15px 25px;
+        text-align: left;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      td {
+        background: #fff;
+        padding: 15px 25px;
+        font-size: 18px;
+    
+        transition: .2s;
+    
+        &.description {
+          color: #353f5f;
+        }
+    
+        &.income {
+          color: rgb(7, 207, 7);
+        }
+    
+        &.expense {
+          color: #e92929;
+        }
+      }
     }
   }
 }
