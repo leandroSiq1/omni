@@ -13,6 +13,12 @@ h1, h2, h3, h4, h5, h6, p, button, input, a, * {
   font-family: 'Lato', sans-serif;
 }
 
+button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .sr-only {
   width: 1px;
   height: 1px;
@@ -28,6 +34,16 @@ h1, h2, h3, h4, h5, h6, p, button, input, a, * {
 .container {
   width: 90%;
   margin: 0 auto;
+}
+
+.cancel {
+  background: red;
+  color: #fff;
+}
+
+.confirm {
+  background: #64c864;
+  color: #fff;
 }
 
 @media (min-width: 800px) {
@@ -168,5 +184,101 @@ section#transaction tbody tr td.income {
 
 section#transaction tbody tr td.expense {
   color: #e92929;
+}
+
+div.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+div.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+}
+
+div.modal-overlay .modal {
+  padding: 20px;
+  background: #f5f5f5;
+}
+
+div.modal-overlay .modal h2 {
+  color: #645096;
+}
+
+div.modal-overlay .modal form div.input-group {
+  width: 100%;
+  padding: 10px;
+}
+
+div.modal-overlay .modal form div.input-group label {
+  color: #646496;
+}
+
+div.modal-overlay .modal form div.input-group label span {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+div.modal-overlay .modal form div.input-group input {
+  width: 100%;
+  height: 35px;
+  padding-left: 10px;
+  margin-top: 10px;
+  background: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+div.modal-overlay .modal form div.buttons-group {
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 50px;
+}
+
+div.modal-overlay .modal form div.buttons-group button {
+  width: 150px;
+  height: 45px;
+  font-size: 17px;
+  font-weight: bold;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+div.modal-overlay .modal form div.buttons-group button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+div.modal-overlay .modal form div.buttons-group .cancel {
+  opacity: 0.6;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+div.modal-overlay .modal form div.buttons-group .cancel:hover {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */

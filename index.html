@@ -50,7 +50,7 @@
       </section>
 
       <section id="transaction">
-        <a href="#">+ Nova Transação</a>
+        <a href="#" onclick="Modal.toggle()">+ Nova Transação</a>
 
         <table id="data-table">
           <thead>
@@ -86,5 +86,34 @@
       </section>
     </main>
 
+    <div id="modalTransaction" class="modal-overlay">
+      <div class="modal">
+        <h2>Nova Transação</h2>
+
+        <form action="">
+          <div class="input-group">
+            <label class="sr-only" for="description">Descrição</label>
+            <input type="text" id="description" placeholder="Descrição" />
+          </div>
+  
+          <div class="input-group">
+            <label for="productValue">Valor do Produto</label>
+            <input type="text" id="product" placeholder="0,00" />
+          </div>
+  
+          <div class="input-group">
+            <label>Valor Cliente <span>(Quantidade de dinheiro que o cliente deu)</span></label>
+            <input type="text" id="customer" placeholder="0,00" />
+          </div>
+
+          <div class="buttons-group">
+            <button onclick="Modal.toggle()" type="button" class="cancel">Cancelar</button>
+            <button type="submit" class="confirm">Confirmar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
   </body>
 </html>

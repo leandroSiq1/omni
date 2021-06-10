@@ -12,6 +12,12 @@ h1, h2, h3, h4, h5, h6, p, button, input, a, * {
   font-family: 'Lato', sans-serif;
 }
 
+button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .sr-only {
   width: 1px;
   height: 1px;
@@ -27,6 +33,16 @@ h1, h2, h3, h4, h5, h6, p, button, input, a, * {
 .container {
   width: 90%;
   margin: 0 auto;
+}
+
+.cancel {
+  background: red;
+  color: #fff;
+}
+
+.confirm {
+  background: rgb(100,200,100);
+  color: #fff;
 }
 
 @media (min-width: 800px) {
