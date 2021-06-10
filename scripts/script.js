@@ -1,15 +1,21 @@
 const Modal = {
   toggle() {
     const modal = document.querySelector("#modalTransaction");
-    
-    if (modal.classList.length === 2) Form.clear();
+    const body = document.body;
+
+    body.style.overflow = "hidden";
+
+    if (modal.classList.length === 2) {
+      Form.clear();
+      body.style.overflow = "initial";
+    };
 
     modal.classList.toggle("active");
   }
 }
 
 // 2,30
-console.log(230 * 100)
+console.log(230 * 100);
 
 const transactions = [
   {

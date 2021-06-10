@@ -2,7 +2,8 @@ section#balance {
   margin-top: -30px;
 
   div.card {
-    background: rgb(60, 255, 0);
+    background: var(--color-shape);
+    color: #fff;
     border-radius: 5px;
 
     padding: 25px 35px;
@@ -31,28 +32,30 @@ section#transaction {
   width: 100%;
   overflow-x: auto;
   margin-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 100px;
 
   a {
     font-size: 17px;
-    color: rgb(162, 7, 251);
+    color: var(--color-green);
     
     text-decoration: none;
 
     display: inline-block;
     margin: 0 0 20px 20px;
 
+    opacity: .6;
     transition: .2s;
 
     &:hover {
-      transform: scale(1.1);
+      margin: 0 0 20px 30px;
+      opacity: 1;
     }
   }
 
   table#data-table {
     width: 100%;
     border-spacing: 0;
-    color: #969cb3;
+    color: #fff;
 
     thead, tbody {
       tr {
@@ -72,7 +75,7 @@ section#transaction {
         font-size: 18px;
         font-weight: normal;
     
-        background: #fff;
+        background: var(--color-background);
         padding: 15px 25px;
         text-align: left;
       }
@@ -82,24 +85,23 @@ section#transaction {
   tbody {
     tr {
       opacity: 0.6;
+      transition: .2s;
 
       &:hover {
         opacity: 1;
       }
 
       td {
-        background: #fff;
+        background: var(--color-shape);
         padding: 15px 25px;
         font-size: 18px;
     
-        transition: .2s;
-    
         &.description {
-          color: #353f5f;
+          color: #fff;
         }
     
         &.income {
-          color: rgb(7, 207, 7);
+          color: var(--color-green);
         }
     
         &.expense {

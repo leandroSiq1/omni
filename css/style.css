@@ -6,7 +6,35 @@
 }
 
 body {
-  background: #f5f5f5;
+  background: #29292e;
+}
+
+:root {
+  --color-background: #121214;
+  --color-green: #51fd8a;
+  --color-red: #ce4a4a;
+  --color-orange: #ff7a29;
+  --color-yellow: #FFCD1E ;
+  --color-attention: #332616;
+  --color-primary: #ff008e;
+  --color-primary-dark: #d60077;
+  --color-primary-hover: #ff4db0;
+  --color-secondary: #e1e1e6;
+  --color-text: #a8a8b3;
+  --color-support: #737380;
+  --color-shape: #202024;
+  --color-shape-hover: #29292e;
+  --color-technologies: rgba(75,75,75,0.2);
+  --color-icons: #41414d;
+  --color-borders: #323238;
+  --color-black: #09090a;
+  --color-white: #fff;
+  --color-purple: #8257e6;
+  --color-scrollbar: #4d4d57;
+  --color-scrollbar-background: transparent;
+  --color-gradient: linear-gradient(155.34deg,#ff018e -0.59%,#ffa17b 51.28%,#ffcd1e);
+  --text: 18px;
+  --text-title: 36px;
 }
 
 h1, h2, h3, h4, h5, h6, p, button, input, a, * {
@@ -67,14 +95,13 @@ button {
 header {
   width: 100%;
   height: 260px;
-  background: #1e1e1e;
+  background: var(--color-background);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 80px;
 }
 
 header img {
@@ -86,7 +113,8 @@ section#balance {
 }
 
 section#balance div.card {
-  background: #3cff00;
+  background: var(--color-shape);
+  color: #fff;
   border-radius: 5px;
   padding: 25px 35px;
   margin-bottom: 20px;
@@ -118,28 +146,29 @@ section#transaction {
   width: 100%;
   overflow-x: auto;
   margin-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 100px;
 }
 
 section#transaction a {
   font-size: 17px;
-  color: #a207fb;
+  color: var(--color-green);
   text-decoration: none;
   display: inline-block;
   margin: 0 0 20px 20px;
+  opacity: .6;
   -webkit-transition: .2s;
   transition: .2s;
 }
 
 section#transaction a:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  margin: 0 0 20px 30px;
+  opacity: 1;
 }
 
 section#transaction table#data-table {
   width: 100%;
   border-spacing: 0;
-  color: #969cb3;
+  color: #fff;
 }
 
 section#transaction table#data-table thead tr th:first-child, section#transaction table#data-table thead tr td:first-child, section#transaction table#data-table tbody tr th:first-child, section#transaction table#data-table tbody tr td:first-child {
@@ -153,13 +182,15 @@ section#transaction table#data-table thead tr th:last-child, section#transaction
 section#transaction table#data-table thead th {
   font-size: 18px;
   font-weight: normal;
-  background: #fff;
+  background: var(--color-background);
   padding: 15px 25px;
   text-align: left;
 }
 
 section#transaction tbody tr {
   opacity: 0.6;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 section#transaction tbody tr:hover {
@@ -167,19 +198,17 @@ section#transaction tbody tr:hover {
 }
 
 section#transaction tbody tr td {
-  background: #fff;
+  background: var(--color-shape);
   padding: 15px 25px;
   font-size: 18px;
-  -webkit-transition: .2s;
-  transition: .2s;
 }
 
 section#transaction tbody tr td.description {
-  color: #353f5f;
+  color: #fff;
 }
 
 section#transaction tbody tr td.income {
-  color: #07cf07;
+  color: var(--color-green);
 }
 
 section#transaction tbody tr td.expense {
@@ -195,7 +224,7 @@ div.modal-overlay {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  position: absolute;
+  position: fixed;
   top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -212,25 +241,23 @@ div.modal-overlay {
 
 div.modal-overlay .modal {
   padding: 20px;
-  background: #f5f5f5;
-}
-
-div.modal-overlay .modal h2 {
-  color: #645096;
+  background: var(--color-shape);
+  color: var(--color-purple);
 }
 
 div.modal-overlay .modal form div.input-group {
   width: 100%;
-  padding: 10px;
+  height: auto;
+  padding: 15px;
 }
 
 div.modal-overlay .modal form div.input-group label {
-  color: #646496;
+  color: var(--color-purple);
 }
 
 div.modal-overlay .modal form div.input-group label span {
   font-size: 14px;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 div.modal-overlay .modal form div.input-group input {
@@ -238,14 +265,15 @@ div.modal-overlay .modal form div.input-group input {
   height: 35px;
   padding-left: 10px;
   margin-top: 10px;
-  background: #fff;
+  color: #fff;
+  background: var(--color-shape-hover);
   border: none;
   border-radius: 5px;
   font-size: 16px;
 }
 
 div.modal-overlay .modal form div.buttons-group {
-  padding: 20px;
+  padding: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -268,8 +296,7 @@ div.modal-overlay .modal form div.buttons-group button {
 }
 
 div.modal-overlay .modal form div.buttons-group button:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  margin-top: -7px;
 }
 
 div.modal-overlay .modal form div.buttons-group .cancel {
