@@ -1,3 +1,12 @@
+/*  
+                        *** Bugs ***                
+
+  Quando adiciona o valores muito altos  o amount esta vindo como NAN
+
+  no momento eu acho que se eu fazer a multiplicação do numero que esta vindo do input e depois dividir ele
+  quando eu for formatar acho que ja resolve esse problema 
+*/
+
 const Modal = {
   toggle() {
     const modal = document.querySelector("#modalTransaction");
