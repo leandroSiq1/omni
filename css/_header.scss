@@ -5,9 +5,14 @@ header {
   background: var(--color-background);
 
   display: flex;
+  align-items: center;
   justify-content: center;
   
-  img {
-    width: 200px;
+  h1 {
+    color: var(--color-white);
+  
+    span {
+      color: var(--color-green);
+    }
   }
 }
