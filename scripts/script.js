@@ -33,6 +33,44 @@ const Transaction = {
     
     App.reload();
   },
+
+  remove(index) {
+    Transaction.all.splice(index, 1);
+    
+    App.reload();
+  },
+
+  income() {
+    let income = 0;
+
+    Transaction.all.forEach(transaction => {
+      if (transaction.amount > 0) {
+        income += transaction.amount;
+      }
+    });
+
+    return income;
+  },
+
+  expense() {
+    let expense = 0;
+
+    Transaction.all.forEach(transaction => {
+      if (transaction.amount < 0) {
+        expense += transaction.amount;
+      }
+    });
+
+    return expense;
+  },
+
+  total() {
+    let total = 0;
+
+    total = Transaction.income() + Transaction.expense();
+
+    return total;
+  }
 }
 
 const Utils = {
@@ -52,15 +90,15 @@ const Utils = {
 }
 
 const DOM = {
-  addTransaction(transaction) {
+  addTransaction(transaction, index) {
     const tr = document.createElement("tr");
 
-    tr.innerHTML = DOM.insertInnerHtml(transaction);
+    tr.innerHTML = DOM.insertInnerHtml(transaction, index);
     
     Transaction.table.appendChild(tr);
   },
 
-  insertInnerHtml(transaction) {
+  insertInnerHtml(transaction, index) {
     const CSSClass = transaction.amount < 0 ? "expense" : "income";
     
     const amount = Utils.formatCurrency(transaction.amount);
@@ -71,11 +109,17 @@ const DOM = {
       <td class="date">09/06/2021</td>
       
       <td>
-        <img src="assets/minus.svg" alt="Remover transação" />
+        <img style="cursor: pointer;" onclick="Transaction.remove(${index})" src="assets/minus.svg" alt="Remover transação" />
       </td>
     `;
 
     return HTML;
+  },
+
+  updateBalance() {
+    document.querySelector("#incomeDisplay").innerHTML = Utils.formatCurrency(Transaction.income());
+    document.querySelector("#expenseDisplay").innerHTML = Utils.formatCurrency(Transaction.expense());
+    document.querySelector("#totalDisplay").innerHTML = Utils.formatCurrency(Transaction.total());
   }
 }
 
@@ -91,14 +135,12 @@ const Form = {
 
       Transaction.add(Form.formatValues());
       
-      Form.clear();
-
+      Form.clear()
       Modal.toggle();
 
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
-
   },
 
   validateFields() {
@@ -137,9 +179,11 @@ const Form = {
 
 const  App = {
   init() {
-    Transaction.all.forEach(transaction => {
-      DOM.addTransaction(transaction);
+    Transaction.all.forEach((transaction, index) => {
+      DOM.addTransaction(transaction, index);
     });
+
+    DOM.updateBalance();
   },
 
   reload() {
