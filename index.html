@@ -62,48 +62,24 @@
             </tr>
           </thead>
 
-          <tbody>
-            <tr>
-              <td class="description">Uma descrição</td>
-              <td class="income">R$ 5,000,00</td>
-              <td class="date">09/06/2021</td>
-              
-              <td>
-                <img src="assets/minus.svg" alt="Remover transação" />
-              </td>
-            </tr>
-            <tr>
-              <td class="description">Uma descrição</td>
-              <td class="expense">R$ 2,000,00</td>
-              <td class="date">09/06/2021</td>
-              
-              <td>
-                <img src="assets/minus.svg" alt="Remover transação" />
-              </td>
-            </tr>
-          </tbody>
+          <tbody id="table"></tbody>
         </table>
       </section>
     </main>
 
-    <div id="modalTransaction" class="modal-overlay active">
+    <div id="modalTransaction" class="modal-overlay">
       <div class="modal">
         <h2>Nova Transação</h2>
 
-        <form action="">
+        <form action="" onsubmit="Form.submit(event)">
           <div class="input-group">
             <label class="sr-only" for="description">Descrição</label>
             <input type="text" id="description" placeholder="Descrição" />
           </div>
   
           <div class="input-group">
-            <label for="productValue">Valor do Produto</label>
-            <input type="text" id="product" placeholder="0,00" />
-          </div>
-  
-          <div class="input-group">
-            <label>Valor Cliente <span>(Quantidade de dinheiro que o cliente deu)</span></label>
-            <input type="text" id="customer" placeholder="0,00" />
+            <label for="amount">Valor</label>
+            <input type="text" id="amount" placeholder="0,00" />
           </div>
 
           <div class="buttons-group">
