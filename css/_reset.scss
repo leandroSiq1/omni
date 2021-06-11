@@ -90,4 +90,10 @@ button {
     margin: 0 auto;
     overflow-x: auto;
   }
+
+  div.modal-overlay {
+    .modal {
+      max-width: 600px;
+    }
+  }
 }

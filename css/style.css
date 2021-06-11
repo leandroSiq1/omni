@@ -90,6 +90,9 @@ button {
     margin: 0 auto;
     overflow-x: auto;
   }
+  div.modal-overlay .modal {
+    max-width: 600px;
+  }
 }
 
 header {
@@ -226,7 +229,7 @@ div.modal-overlay.active {
 div.modal-overlay {
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   position: fixed;
   top: 0;
   display: -webkit-box;
@@ -243,8 +246,11 @@ div.modal-overlay {
 }
 
 div.modal-overlay .modal {
+  width: 90%;
   padding: 20px;
+  margin-top: -10px;
   background: var(--color-shape);
+  border-radius: 5px;
   color: var(--color-purple);
 }
 
