@@ -14,10 +14,19 @@ const Modal = {
   }
 }
 
+const Storage = {
+  get() {
+    const transactions = localStorage.getItem("transactions:merca.finance") || [];
+
+    return JSON.parse(transactions);
+  },
+  set(transactions) {
+    localStorage.setItem("transactions:merca.finance", JSON.stringify(transactions));
+  },
+}
+
 const Transaction = {
-  all: [
-    
-  ],
+  all: Storage.get(),
 
   table: document.querySelector("#table"), 
 
@@ -179,6 +188,8 @@ const  App = {
     });
 
     DOM.updateBalance();
+
+    Storage.set(Transaction.all);
   },
 
   reload() {
@@ -190,10 +201,12 @@ const  App = {
     const table = document.querySelector("#data-table");
     const message = document.querySelector("#noTransactions");
 
+    console.log(Transaction.all)
+
     if (Transaction.all.length === 0) {
       message.classList.add("active");
       table.classList.remove("active");
-      
+
       table.style.padding = "0";
     } else {
       message.classList.remove("active");
