@@ -1,5 +1,37 @@
 main {
   padding-bottom: 100px;
+
+  div.noTransactions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    text-align: center;
+
+    opacity: 0;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+
+    h2 {
+      color: var(--color-green);
+    }
+
+    img {
+      width: 100px;
+    }
+  }
+
+  div.noTransactions.active {
+    opacity: 1;
+    visibility: visible;
+    width: unset;
+    height: unset;
+    overflow: unset;
+  }
 }
 
 section#balance {
@@ -59,6 +91,9 @@ section#transaction {
     width: 100%;
     border-spacing: 0;
     color: #fff;
+    
+    opacity: 0;
+    visibility: hidden;
 
     thead, tbody {
       tr {
@@ -112,5 +147,12 @@ section#transaction {
         }
       }
     }
+  }
+}
+
+section#transaction {
+  table#data-table.active {
+    opacity: 1;
+    visibility: visible;
   }
 }

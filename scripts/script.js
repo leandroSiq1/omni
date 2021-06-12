@@ -16,14 +16,7 @@ const Modal = {
 
 const Transaction = {
   all: [
-    {
-      description: "Bolacha",
-      amount: 500,
-    },
-    {
-      description: "Guárana",
-      amount: -400,
-    },
+    
   ],
 
   table: document.querySelector("#table"), 
@@ -77,18 +70,18 @@ const Utils = {
   formatAmount(value) {
     let amount = String(value).replace(/\,/g, "");
 
-    amount = amount * 100;
+    amount = Number(amount);
 
-    return Number(amount);
+    return amount;
   },
 
   formatCurrency(value) {
-    value = Number(value) / 100;
+    let amount = value / 100;
 
-    value = value.toLocaleString("pr-BR", { style: "currency", currency: "BRL" })
-    
-    return value;
-  }
+    amount = amount.toLocaleString("pr-BR", { style: "currency", currency: "BRL" });
+
+    return amount;
+  },
 }
 
 const DOM = {
@@ -102,7 +95,7 @@ const DOM = {
 
   insertInnerHtml(transaction, index) {
     const CSSClass = transaction.amount < 0 ? "expense" : "income";
-    
+
     const amount = Utils.formatCurrency(transaction.amount);
 
     const HTML = `
@@ -136,7 +129,7 @@ const Form = {
       Form.validateFields();
 
       Transaction.add(Form.formatValues());
-      
+  
       Form.clear()
       Modal.toggle();
 
@@ -169,9 +162,7 @@ const Form = {
     let { description, amount } = Form.getValues();
 
     amount = Utils.formatAmount(amount);
-    
-    console.log(amount);
-    
+
     return {
       description,
       amount,
@@ -181,6 +172,8 @@ const Form = {
 
 const  App = {
   init() {
+    App.checkTransactions();
+
     Transaction.all.forEach((transaction, index) => {
       DOM.addTransaction(transaction, index);
     });
@@ -191,7 +184,22 @@ const  App = {
   reload() {
     Transaction.table.innerHTML = "";
     App.init();
-  }
+  },
+
+  checkTransactions() {
+    const table = document.querySelector("#data-table");
+    const message = document.querySelector("#noTransactions");
+
+    if (Transaction.all.length === 0) {
+      message.classList.add("active");
+      table.classList.remove("active");
+      
+      table.style.padding = "0";
+    } else {
+      message.classList.remove("active");
+      table.classList.add("active");
+    }
+  },
 }
 
 App.init();
