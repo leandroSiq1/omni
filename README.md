@@ -1,6 +1,6 @@
 ### Tarefas / Ideias
 
-# Botão de para Apagar todas as transações - com modal de confirmação
+# Modal de confirmação para Apagar todas as transações
 
 # Botão de scroll top para quando houver muitas transações / compras, para facilitar a experiencia do usuario
 
