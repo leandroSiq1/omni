@@ -50,7 +50,11 @@
       </section>
 
       <section id="transaction">
-        <a href="#" onclick="Modal.toggle()">+ Nova Transação</a>
+        <div class="actions">
+          <a href="#" onclick="Modal.toggle()">+ Nova Transação</a>
+
+          <button id="btn-clearTransaction" onclick="Transaction.clearTransactions()" type="button">Limpar Transações</button>
+        </div>
 
         <table id="data-table">
           <thead>

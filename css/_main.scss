@@ -69,21 +69,50 @@ section#transaction {
   overflow-x: auto;
   margin-top: 30px;
 
-  a {
-    font-size: 17px;
-    color: var(--color-green);
-    
-    text-decoration: none;
+  div.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    display: inline-block;
-    margin: 0 0 20px 20px;
+    a {
+      font-size: 17px;
+      color: var(--color-green);
+      
+      text-decoration: none;
+  
+      display: inline-block;
+      margin: 0 0 20px 20px;
+  
+      opacity: .6;
+      transition: .2s;
+  
+      &:hover {
+        margin: 0 0 20px 30px;
+        opacity: 1;
+      }
+    }
 
-    opacity: .6;
-    transition: .2s;
+    button {
+      padding: 10px;
 
-    &:hover {
-      margin: 0 0 20px 30px;
+      background: var(--color-shape);
+
+      font-size: 16px;
+      color: #fff;
+
+      transition: .2s;
+
+      opacity: 0;
+      visibility: hidden;
+
+      &:hover {
+        background: var(--color-red);
+      }
+    }
+
+    button.active {
       opacity: 1;
+      visibility: visible;
     }
   }
 

@@ -42,6 +42,12 @@ const Transaction = {
     App.reload();
   },
 
+  clearTransactions() {
+    Transaction.all = [];
+    
+    App.reload();
+  },
+
   income() {
     let income = 0;
 
@@ -222,15 +228,20 @@ const  App = {
   checkTransactions() {
     const table = document.querySelector("#data-table");
     const message = document.querySelector("#noTransactions");
+    const btnClearTransaction = document.querySelector("#btn-clearTransaction");
 
     if (Transaction.all.length === 0) {
       message.classList.add("active");
+
+      btnClearTransaction.classList.remove("active");
       table.classList.remove("active");
 
       table.style.padding = "0";
     } else {
       message.classList.remove("active");
+
       table.classList.add("active");
+      btnClearTransaction.classList.add("active");
     }
   },
 }

@@ -201,7 +201,19 @@ section#transaction {
   margin-top: 30px;
 }
 
-section#transaction a {
+section#transaction div.actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section#transaction div.actions a {
   font-size: 17px;
   color: var(--color-green);
   text-decoration: none;
@@ -212,9 +224,29 @@ section#transaction a {
   transition: .2s;
 }
 
-section#transaction a:hover {
+section#transaction div.actions a:hover {
   margin: 0 0 20px 30px;
   opacity: 1;
+}
+
+section#transaction div.actions button {
+  padding: 10px;
+  background: var(--color-shape);
+  font-size: 16px;
+  color: #fff;
+  -webkit-transition: .2s;
+  transition: .2s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+section#transaction div.actions button:hover {
+  background: var(--color-red);
+}
+
+section#transaction div.actions button.active {
+  opacity: 1;
+  visibility: visible;
 }
 
 section#transaction table#data-table {
