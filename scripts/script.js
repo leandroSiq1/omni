@@ -91,6 +91,24 @@ const Utils = {
 
     return amount;
   },
+
+  formatDate(dateTransaction) {
+    function formatDateNumber(date) {
+      if (date <= 9) {
+        return "0" + date;
+      }
+      
+      return date;
+    }
+
+    const date = new Date(dateTransaction);
+
+    const day = formatDateNumber(date.getDate());
+    const month = formatDateNumber(date.getMonth() + 1);
+    const year = date.getFullYear();
+
+    return `${day}/${month}/${year}`;
+  }
 }
 
 const DOM = {
@@ -107,10 +125,12 @@ const DOM = {
 
     const amount = Utils.formatCurrency(transaction.amount);
 
+    const date = Utils.formatDate(transaction.date);
+
     const HTML = `
       <td class="description">${transaction.description}</td>
       <td class="${CSSClass}">${amount}</td>
-      <td class="date">09/06/2021</td>
+      <td class="date">${date}</td>
       
       <td>
         <img style="cursor: pointer;" onclick="Transaction.remove(${index})" src="assets/minus.svg" alt="Remover transação" />
@@ -164,17 +184,19 @@ const Form = {
     return {
       description: Form.description.value,
       amount: Form.amount.value,
+      date: Date.now(),
     }
   },
 
   formatValues() {
-    let { description, amount } = Form.getValues();
+    let { description, amount, date } = Form.getValues();
 
     amount = Utils.formatAmount(amount);
 
     return {
       description,
       amount,
+      date
     };
   }
 }
@@ -200,8 +222,6 @@ const  App = {
   checkTransactions() {
     const table = document.querySelector("#data-table");
     const message = document.querySelector("#noTransactions");
-
-    console.log(Transaction.all)
 
     if (Transaction.all.length === 0) {
       message.classList.add("active");
