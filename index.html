@@ -53,7 +53,7 @@
         <div class="actions">
           <a href="#" onclick="Modal.toggle()">+ Nova Transação</a>
 
-          <button id="btn-clearTransaction" onclick="Transaction.clearTransactions()" type="button">Limpar Transações</button>
+          <button id="btn-clearTransaction" onclick="Modal.modalRemove()" type="button">Limpar Transações</button>
         </div>
 
         <table id="data-table">
@@ -97,6 +97,19 @@
             <button type="submit" class="confirm">Confirmar</button>
           </div>
         </form>
+      </div>
+    </div>
+
+    <div id="modalRemoveTransactions" class="modal-remove">
+      <div class="container">
+        <h2>Deseja excluir todas as Transações ?</h2>
+
+        <h3>Atenção os dados serão apagados permanentemente!</h3>
+
+        <div class="group-buttons">
+          <button onclick="Modal.modalRemove()" id="btn-cancel" type="button">Cancelar</button>
+          <button onclick="Transaction.clearTransactions()" id="btn-clear" type="button">Limpar</button>
+        </div>
       </div>
     </div>
 

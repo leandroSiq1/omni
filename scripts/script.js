@@ -11,14 +11,19 @@ const Modal = {
     };
 
     modal.classList.toggle("active");
+  },
+
+  modalRemove() {
+    const modal = document.querySelector("#modalRemoveTransactions");
+    modal.classList.toggle("active");
   }
 }
 
 const Storage = {
   get() {
-    const transactions = localStorage.getItem("transactions:merca.finance") || [];
+    const transactions = JSON.parse(localStorage.getItem("transactions:merca.finance")) || [];
 
-    return JSON.parse(transactions);
+    return transactions;
   },
   set(transactions) {
     localStorage.setItem("transactions:merca.finance", JSON.stringify(transactions));
@@ -44,6 +49,7 @@ const Transaction = {
 
   clearTransactions() {
     Transaction.all = [];
+    Modal.modalRemove();
     
     App.reload();
   },
