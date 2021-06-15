@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: var(--color-background);
+}
+
+:root {
+  --color-background: #121214;
+  --color-green: #51fd8a;
+  --color-red: #ce4a4a;
+  --color-orange: #ff7a29;
+  --color-yellow: #FFCD1E ;
+  --color-attention: #332616;
+  --color-primary: #ff008e;
+  --color-primary-dark: #d60077;
+  --color-primary-hover: #ff4db0;
+  --color-secondary: #e1e1e6;
+  --color-text: #a8a8b3;
+  --color-support: #737380;
+  --color-shape: #202024;
+  --color-shape-hover: #29292e;
+  --color-technologies: rgba(75,75,75,0.2);
+  --color-icons: #41414d;
+  --color-borders: #323238;
+  --color-black: #09090a;
+  --color-white: #fff;
+  --color-purple: #8257e6;
+  --color-scrollbar: #4d4d57;
+  --color-scrollbar-background: transparent;
+  --color-gradient: linear-gradient(155.34deg,#ff018e -0.59%,#ffa17b 51.28%,#ffcd1e);
+  --text: 18px;
+  --text-title: 36px;
+}
+
+h1, h2, h3, h4, h5, h6, p, button, input, a, * {
+  font-family: 'Lato', sans-serif;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+  position: absolute;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.cancel {
+  background: red;
+  color: #fff;
+}
+
+.confirm {
+  background: #64c864;
+  color: #fff;
+}
+
+@media (min-width: 800px) {
+  section#balance {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  section#balance .card {
+    max-width: 500px;
+  }
+  section#transaction {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+  div.modal-overlay .modal {
+    max-width: 600px;
+  }
+}
+
+section#header {
+  width: 100%;
+  background: var(--color-shape);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#header header {
+  width: 90%;
+  height: 100px;
+  color: #fff;
+  margin: 0 auto;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#header header h1 {
+  font-size: 28px;
+}
+
+section#header header h1 span {
+  color: var(--color-green);
+}
+
+section#header header p {
+  font-size: 18px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 13px;
+}
+
+section#header div.line {
+  width: 90%;
+  height: 1px;
+  background: var(--color-shape-hover);
+  border: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+section#header div.top-bar {
+  width: 90%;
+  color: #fff;
+  margin: 0 auto;
+  padding: 40px 0 60px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section#header div.top-bar div.info-purchases {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 50px;
+}
+
+section#header div.top-bar div.info-purchases h2 {
+  font-size: 27px;
+}
+
+section#header div.top-bar div.info-purchases h2 p {
+  font-size: 17px;
+  padding: 5px 0;
+}
+
+section#header div.top-bar button {
+  height: 43px;
+  background: var(--color-orange);
+  font-size: 17px;
+  font-weight: bold;
+  color: #fff;
+  padding: 20px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 20px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+section#header div.top-bar button:hover {
+  margin-top: -8px;
+}
+/*# sourceMappingURL=stylePurchases.css.map */
